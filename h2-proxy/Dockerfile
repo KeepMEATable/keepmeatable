@@ -10,7 +10,7 @@ RUN openssl rsa -passin pass:NotSecure -in localhost.pass.key -out localhost.key
 RUN rm localhost.pass.key
 RUN openssl req -x509 -out localhost.crt -keyout localhost.key \
       -newkey rsa:2048 -nodes -sha256 \
-      -subj '/CN=localhost' \
+      -subj '/CN=*.keepmeatable.dev' \
       -extensions EXT \
       -config /tmp/ssl.conf
 

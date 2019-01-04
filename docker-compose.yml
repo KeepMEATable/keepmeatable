@@ -7,10 +7,17 @@ services:
     build:
       context: ./ascustomer
     volumes:
-      - ./ascustomer:/usr/src/ascustomer:rw,cached
-      - /usr/src/ascustomer/node_modules
+      - ./asCustomer:/usr/src/asCustomer:rw,cached
+      - /usr/src/asCustomer/node_modules
     ports:
       - "8080:8080"
+
+  mercure:
+    image: dunglas/mercure:latest
+    env_file:
+      - ./mercure/.env
+    ports:
+      - "8081:8081"
 
   h2-proxy:
     # Don't use this proxy in prod
