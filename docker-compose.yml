@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+
+  ascustomer:
+    # Use a static website hosting service in production
+    build:
+      context: ./ascustomer
+    volumes:
+      - ./ascustomer:/usr/src/ascustomer:rw,cached
+      - /usr/src/ascustomer/node_modules
+    ports:
+      - "8080:8080"
+
+  h2-proxy:
+    # Don't use this proxy in prod
+    build:
+      context: h2-proxy
+    depends_on:
+      - ascustomer
+    ports:
+      - "80:80"
+      - "443:443"

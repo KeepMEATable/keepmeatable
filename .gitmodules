@@ -1,0 +1,3 @@
+[submodule "asCustomer"]
+	path = asCustomer
+	url = git@github.com:KeepMEATable/asCustomer.git
