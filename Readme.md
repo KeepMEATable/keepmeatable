@@ -35,7 +35,7 @@ For testing purposes, the topic used to test is the same UUID used to create the
 ## Aliases for Submodule while working.
 
 ```shell
-$ git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'"
-$ git config alias.spush 'push --recurse-submodules=on-demand'
-$ git config alias.supdate 'submodule update --remote --merge'
+$ git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'" # will execute a diff on each submodule.
+$ git config alias.spush 'push --recurse-submodules=on-demand' # will push only if your submodule does not contains any changes.
+$ git config alias.supdate 'submodule update --remote --merge' # will update a submodule.
 ```
