@@ -32,8 +32,6 @@ services:
     # Comment out this volume in production
     volumes:
       - ./api/public:/srv/api/public:ro
-    ports:
-      - "8080:80"
 
   cache-proxy:
     image: ${CONTAINER_REGISTRY_BASE}/varnish
@@ -50,8 +48,6 @@ services:
       - ./api/docker/varnish/conf:/usr/local/etc/varnish:ro
     tmpfs:
       - /usr/local/var/varnish:exec
-    ports:
-      - "8081:80"
 
   db:
     # In production, you may want to use a managed database service
@@ -75,15 +71,13 @@ services:
     volumes:
       - ./asCustomer:/usr/src/asCustomer:rw,cached
       - /usr/src/asCustomer/node_modules
-    ports:
-      - "8082:8080"
 
   mercure:
     image: dunglas/mercure:latest
     env_file:
       - ./mercure/.env
     ports:
-      - "8083:8081"
+      - "8081:8081"
 
   h2-proxy:
     # Don't use this proxy in prod
