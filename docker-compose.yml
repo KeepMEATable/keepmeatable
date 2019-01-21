@@ -72,25 +72,33 @@ services:
       - ./asCustomer:/usr/src/asCustomer:rw,cached
       - /usr/src/asCustomer/node_modules
 
+  # do not use in production
   mercure:
     image: dunglas/mercure:latest
     env_file:
       - ./mercure/.env
-    ports:
-      - "8081:8081"
 
+  # do not use in production
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbit.keepmeatable.dev"
+    labels:
+      NAME: "rabbitmq"
+
+  # do not use in production
   h2-proxy:
-    # Don't use this proxy in prod
     build:
       context: h2-proxy
     depends_on:
       - ascustomer
       - api
       - cache-proxy
+      - rabbitmq
     ports:
       - "80:80"
       - "443:443"
       - "8443:8443"
+      - "15672:15672"
 
 volumes:
   db-data: {}
