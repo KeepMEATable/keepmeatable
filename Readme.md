@@ -39,3 +39,11 @@ $ git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'" # wil
 $ git config alias.spush 'push --recurse-submodules=on-demand' # will push only if your submodule does not contains any changes.
 $ git config alias.supdate 'submodule update --remote --merge' # will update a submodule.
 ```
+
+## Running
+
+To consume the mercure messages.
+
+```shell
+$ docker-compose exec php bin/console messenger:consume amqp
+```
