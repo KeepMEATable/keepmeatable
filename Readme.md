@@ -25,8 +25,11 @@ $ sudo nano /etc/hosts
 ```
 
 ```shell
-127.0.0.1 app.keepmeatable.dev
-127.0.0.1 mercure.keepmeatable.dev
+127.0.0.1       app.keepmeatable.dev
+127.0.0.1       mercure.keepmeatable.dev
+127.0.0.1       api.keepmeatable.dev
+127.0.0.1       holder.keepmeatable.dev
+127.0.0.1       rabbit.keepmeatable.dev
 ```
 
 You can now open [your favorite browser](https://app.keepmeatable.dev) to test it.

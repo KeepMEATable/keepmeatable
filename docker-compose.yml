@@ -71,8 +71,18 @@ services:
     env_file:
       - ./ascustomer/.env
     volumes:
-      - ./asCustomer:/usr/src/asCustomer:rw,cached
-      - /usr/src/asCustomer/node_modules
+      - ./ascustomer:/usr/src/ascustomer:rw,cached
+      - /usr/src/ascustomer/node_modules
+
+  asholder:
+    # Use a static website hosting service in production
+    build:
+      context: ./asholder
+    env_file:
+      - ./asholder/.env
+    volumes:
+      - ./asholder:/usr/src/asholder:rw,cached
+      - /usr/src/asholder/node_modules
 
   # do not use in production
   mercure:
@@ -96,6 +106,7 @@ services:
       - api
       - cache-proxy
       - rabbitmq
+      - asholder
     ports:
       - "80:80"
       - "443:443"

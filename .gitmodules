@@ -1,6 +1,9 @@
-[submodule "asCustomer"]
-	path = asCustomer
+[submodule "ascustomer"]
+	path = ascustomer
 	url = git@github.com:KeepMEATable/asCustomer.git
 [submodule "api"]
 	path = api
 	url = git@github.com:KeepMEATable/api.git
+[submodule "asholder"]
+	path = asholder
+	url = git@github.com:KeepMEATable/asHolder.git
