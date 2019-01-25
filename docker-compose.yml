@@ -68,6 +68,8 @@ services:
     # Use a static website hosting service in production
     build:
       context: ./ascustomer
+    env_file:
+      - ./ascustomer/.env
     volumes:
       - ./asCustomer:/usr/src/asCustomer:rw,cached
       - /usr/src/asCustomer/node_modules
