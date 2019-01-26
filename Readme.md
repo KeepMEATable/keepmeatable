@@ -18,7 +18,7 @@ From here, you need to get the certificate freshly created in the h2-proxy conta
 $ docker-compose up -d
 ```
 
-Now, you can add 2 new hosts to your machine.
+Now, you can add 5 new hosts to your machine.
 
 ```shell
 $ sudo nano /etc/hosts
@@ -33,7 +33,6 @@ $ sudo nano /etc/hosts
 ```
 
 You can now open [your favorite browser](https://app.keepmeatable.dev) to test it.
-For testing purposes, the topic used to test is the same UUID used to create the QrCode => `A17CF9AD-C964-4CB5-90C2-2BED8F8BCE67`
 
 ## Aliases for Submodule while working.
 
