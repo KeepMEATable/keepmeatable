@@ -32,6 +32,14 @@ $ sudo nano /etc/hosts
 127.0.0.1       rabbit.keepmeatable.dev
 ```
 
+Create the ssh keys to secure and access the API
+
+```shell
+$ docker-compose exec php mkdir -p config/jwt # For Symfony3+, no need of the -p option
+$ docker-compose exec php openssl genrsa -out config/jwt/private.pem -aes256 4096
+$ docker-compose exec php openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
+```
+
 You can now open [your favorite browser](https://app.keepmeatable.dev) to test it.
 
 ## Aliases for Submodule while working.
