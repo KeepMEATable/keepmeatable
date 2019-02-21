@@ -97,6 +97,12 @@ services:
     labels:
       NAME: "rabbitmq"
 
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+
   # do not use in production
   h2-proxy:
     build:
@@ -107,6 +113,7 @@ services:
       - cache-proxy
       - rabbitmq
       - asholder
+      - mailcatcher
     ports:
       - "80:80"
       - "443:443"
