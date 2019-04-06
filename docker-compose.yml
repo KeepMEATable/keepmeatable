@@ -114,6 +114,8 @@ services:
       - rabbitmq
       - asholder
       - mailcatcher
+    volumes:
+      - ./h2-proxy/certs:/etc/nginx/certs:ro,cached
     ports:
       - "80:80"
       - "443:443"
