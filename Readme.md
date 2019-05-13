@@ -8,6 +8,14 @@ $ cd ascustomer
 $ git submodule init
 $ git submodule update
 $ cd ..
+$ cd asholder
+$ git submodule init
+$ git submodule update
+$ cd ..
+$ cd api
+$ git submodule init
+$ git submodule update
+$ cd ..
 $ docker-compose pull
 $ docker-compose build
 ```
@@ -40,7 +48,7 @@ $ docker-compose exec php openssl genrsa -out config/jwt/private.pem -aes256 409
 $ docker-compose exec php openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
 
-You can now open [your favorite browser](https://app.keepmeatable.dev) to test it.
+You can now open your favorite browser [as customer](https://app.keepmeatable.dev) or [as holder](https://holder.keepmeatable.dev) to test it.
 
 ## Aliases for Submodule while working.
 
@@ -49,6 +57,8 @@ $ git config alias.sdiff '!'"git diff && git submodule foreach 'git diff'" # wil
 $ git config alias.spush 'push --recurse-submodules=on-demand' # will push only if your submodule does not contains any changes.
 $ git config alias.supdate 'submodule update --remote --merge' # will update a submodule.
 ```
+
+or just work inside each sub directory.
 
 ## Running
 
