@@ -7,3 +7,6 @@
 [submodule "asholder"]
 	path = asholder
 	url = git@github.com:KeepMEATable/asHolder.git
+[submodule "app"]
+	path = app
+	url = git@github.com:KeepMEATable/app.git
